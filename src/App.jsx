@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Provider } from 'react-redux'
 
 import Contrais from './components/contrais/contrais'
 import Details from './components/details/details'
 import Bayanate from './components/bayanate/bayanate'
 import Map from './components/map/map'
+
+import store from './store/store'
 
 import mackStyle from './style.App'
 
@@ -13,11 +16,13 @@ const App = () => {
     const classes = mackStyle()
 
     return (
-        <div className={classes.blocks}>
-            <Con classes={classes}  />
-            <MapABay classes={classes} />
-            <Det classes={classes} />
-        </div>
+        <Provider store={store}>
+            <div className={classes.blocks}>
+                <Con classes={classes}  />
+                <MapABay classes={classes} />
+                <Det classes={classes} />
+            </div>
+        </Provider>
     )
 }
 
