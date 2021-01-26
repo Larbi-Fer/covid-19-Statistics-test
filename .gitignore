@@ -1,3 +1,5 @@
 /node_modules
 /map.test.js
 /src/components/map.test.jsx
+/runServer.cmd
+/server.test.js
